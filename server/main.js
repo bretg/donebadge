@@ -40,6 +40,23 @@ Meteor.startup(() => {
                         badgeId: badgeId
                     });
                 },
+                addPrize: function(parentId, name, kidId, points, category) {
+                    var kidName;
+                    if (kidId == "0") {
+                        kidName="";
+                    } else {
+                     kidName=Meteor.users.findOne({_id: kidId}).username;
+                    }
+                    Prizes.insert({
+                        parentId: parentId,
+                        name: name,
+                        kidId: kidId,
+                        kidName: kidName,
+                        points: points,
+                        category: category,
+                        status: "active"
+                    });
+                },
                 addCalendarItem: function(parentId, name, kidId, date) {
                     var kidName=Meteor.users.findOne({_id: kidId}).username;
                     Events.insert({
@@ -50,6 +67,13 @@ Meteor.startup(() => {
                         start: date,
                         end: date
                     });
+                },
+                "redeemPrize": function(userId, newPointTotal, prizeId) {
+                    var prizeObj=Prizes.findOne({_id: prizeId});
+                    Meteor.users.update({_id: userId}, {$set: {"profile.points": newPointTotal}});
+                    if (prizeObj.category=="one-time") {
+                        Prizes.update({_id_: prizeId},{$set: {status: "claimed"}});
+                    }
                 }
          });
 });

@@ -25,6 +25,7 @@
 			<th class="responsibilities">Prize</th>
 			<th class="responsibilities">Points</th>
 			<th class="responsibilities">% Done</th>
+			<th class="responsibilities">Action</th>
 		</tr>
 		{{#each kidPrizeList}}
 		    {{> kidPrizeTableRow}}
@@ -49,5 +50,6 @@
 		<td class="responsibilities">{{name}}</td>
 		<td class="responsibilities">{{points}}</td>
 		<td class="responsibilities">{{percentDone}}</td>
+		<td class="responsibilities"><a href="#" id={{_id}} class="redeemBtn btn btn-primary">Redeem</a></td>
 	</tr>
 </template>

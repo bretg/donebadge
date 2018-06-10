@@ -9,7 +9,7 @@ Template.sidebar.events({
 				Bert.alert(err.reason, "danger", "growl-top-right");
 			} else {
 				Router.go('/');
-				Bert.alert("you Are Now Logged Out", "success", "growl-top-right");
+				Bert.alert("You are now logged out", "success", "growl-top-right");
 			}
 		});
 	},

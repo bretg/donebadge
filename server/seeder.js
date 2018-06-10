@@ -139,7 +139,9 @@ Meteor.startup(function() {
         name: "Trip to Joe's pizza for a slice",
         kidId: 0,
         kidName: "",
-        points: 300
+        points: 300,
+        category: "ongoing",
+        status: "active"
       });
 
       Prizes.insert({
@@ -147,7 +149,9 @@ Meteor.startup(function() {
         name: "Don't have to attend sister's recital",
         kidId: johnId,
         kidName: "John",
-        points: 500
+        points: 500,
+        category: "one-time",
+        status: "active"
       });
 
       Prizes.insert({
@@ -155,7 +159,9 @@ Meteor.startup(function() {
         name: "Character lunchbox",
         kidId: sallyId,
         kidName: "Sally",
-        points: 1000
+        points: 1000,
+        category: "one-time",
+        status: "active"
       });
 
       console.log("Initial User Created");

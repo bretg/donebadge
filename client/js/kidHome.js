@@ -27,7 +27,8 @@ Template.kidHome.helpers({
 	kidPrizeList: function() {
 		var myName=Meteor.user().username
 		var myPoints=Meteor.user().profile.points;
-		var results=Prizes.find({$or: [{kidName: ""}, {kidName: myName}]}).fetch();
+		var results=Prizes.find({$and: [{status: "active"},
+			                            {$or: [{kidName: ""}, {kidName: myName}]}]}).fetch();
 		var percentDone=0;
 		// calculate percent done
 		for (var n=0; n< results.length; n++) {
@@ -45,3 +46,18 @@ Template.kidHome.helpers({
 		return results;
 	},
 });
+
+Template.kidHome.events({
+   "click .redeemBtn": function(event, template) {
+   		var prizeId=event.target.id;
+   		var prizeObj=Prizes.findOne({_id: prizeId});
+   		var pointTotal;
+   		alert("Congrats "+Meteor.user().username+"! You get: "+prizeObj.name+".");
+   		pointTotal=Meteor.user().profile.points;
+   		pointTotal-=prizeObj.points;
+   		Meteor.call('redeemPrize', Meteor.userId(), pointTotal, prizeId);
+   		return false;
+   }
+
+});
+
