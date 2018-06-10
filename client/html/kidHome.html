@@ -3,9 +3,9 @@
 	{{#if currentUser}}
 	<h1 class="header">Kid Home</h1>
 	<h1 id="header">Hi {{kidName}}</h1>
-	<h2 id="pointtotal">Your Point Total: {{kidPoints}}</h2>
+	<h2 id="pointtotal">You have {{kidPoints}} points.</h2>
 	<h2 class="respos">Upcoming Responsibilites</h2>
-	<div class="the_day">
+	<div>
 	<table class="responsibilities" border=1>
 		<tr class="responsibilities">
 			<th class="responsibilities">Date</th>
@@ -18,7 +18,18 @@
 		{{/each}}
 	</table>
 	</div>
+	<p></p>
 	<h1 id="prizess">Prizes</h1>
+	<table class="responsibilities" border=1>
+		<tr class="responsibilities">
+			<th class="responsibilities">Prize</th>
+			<th class="responsibilities">Points</th>
+			<th class="responsibilities">% Done</th>
+		</tr>
+		{{#each kidPrizeList}}
+		    {{> kidPrizeTableRow}}
+		{{/each}}
+	</table>
 	{{else}}
 	You need to log in first
 	{{/if}}
@@ -30,5 +41,13 @@
 		<td class="responsibilities">{{name}}</td>
 		<td class="responsibilities">{{points}}</td>
 		<td class="responsibilities"><img src={{badgeImg}} class="badgePreview"></td>
+	</tr>
+</template>
+
+<template name="kidPrizeTableRow">
+	<tr>
+		<td class="responsibilities">{{name}}</td>
+		<td class="responsibilities">{{points}}</td>
+		<td class="responsibilities">{{percentDone}}</td>
 	</tr>
 </template>

@@ -23,5 +23,25 @@ Template.kidHome.helpers({
 			}
 		}
 		return results;
-	}
+	},
+	kidPrizeList: function() {
+		var myName=Meteor.user().username
+		var myPoints=Meteor.user().profile.points;
+		var results=Prizes.find({$or: [{kidName: ""}, {kidName: myName}]}).fetch();
+		var percentDone=0;
+		// calculate percent done
+		for (var n=0; n< results.length; n++) {
+			percentDone=0;
+			if (myPoints > 0) {
+				var prizePoints=results[n].points;
+				if (myPoints > prizePoints) {
+					percentDone=100;
+				} else {
+					percentDone=Math.round((myPoints/prizePoints)*100);
+				}
+			}
+			results[n].percentDone=percentDone;
+		}
+		return results;
+	},
 });
