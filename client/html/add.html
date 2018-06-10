@@ -1,0 +1,20 @@
+<template name="add">
+    <div id="addForm-wrap">
+        <center>
+            <form class="add-event">
+            	<h2>Add Event</h2>
+            	<label for="Event Name">Event Name</label>
+                <input type="text" name="eventName" id="eventName" class="form-control" placeholder="Event Name" maxlength="40">
+                <label for="Date">Date</label>
+                <input type="text" name="startDate" id="startDate" class="form-control" placeholder="yyyy-mm-dd" maxlength="14">
+                <label for="Type">Event Type</label>
+                <select name="eventType" id="eventType">
+                	{{#each type in eventTypes}}
+                		<option value="{{type}}">{{type}}</option>
+                	{{/each}}
+                </select>
+                <button type="submit" id="add-event" class="btn btn-lg btn-primary btn-block">Add Event</button>
+            </form>
+        </center>
+    </div>
+</template>

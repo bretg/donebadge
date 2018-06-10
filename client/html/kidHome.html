@@ -1,0 +1,34 @@
+<template name="kidHome">
+
+	{{#if currentUser}}
+	<h1 class="header">Kid Home</h1>
+	<h1 id="header">Hi {{kidName}}</h1>
+	<h2 id="pointtotal">Your Point Total: {{kidPoints}}</h2>
+	<h2 class="respos">Upcoming Responsibilites</h2>
+	<div class="the_day">
+	<table class="responsibilities" border=1>
+		<tr class="responsibilities">
+			<th class="responsibilities">Date</th>
+			<th class="responsibilities">Responsibilty</th>
+			<th class="responsibilities">Points</th>
+			<th class="responsibilities">Badge</th>
+		</tr>
+		{{#each kidRespList}}
+		    {{> kidRespTableRow}}
+		{{/each}}
+	</table>
+	</div>
+	<h1 id="prizess">Prizes</h1>
+	{{else}}
+	You need to log in first
+	{{/if}}
+</template>
+
+<template name="kidRespTableRow">
+	<tr>
+		<td class="responsibilities">{{date}}</td>
+		<td class="responsibilities">{{name}}</td>
+		<td class="responsibilities">{{points}}</td>
+		<td class="responsibilities"><img src={{badgeImg}} class="badgePreview"></td>
+	</tr>
+</template>

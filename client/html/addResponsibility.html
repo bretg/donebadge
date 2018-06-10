@@ -1,0 +1,67 @@
+<template name="addResponsibility">
+	<h2 class="header">Add Responsibility</h2>
+
+	<form class="form-add-resonsibility">
+		<table width="100%">
+			<tr><th class="responsibilities" valign="middle">Kid</th><td valign="bottom">
+                <select name="kid" id="kid" class="pulldown">
+                	{{#each kids}}
+                		<option value="{{_id}}">{{username}}</option>
+                	{{/each}}
+                </select>
+            </td></tr>
+            <tr><th class="responsibilities">Responsibility</th><td valign="bottom">
+                <input type="text" name="responsibility" id="responsibility" class="form-control" placeholder="Responsibility">
+            </td></tr>
+            <tr><th class="responsibilities">Date</th><td valign="bottom">
+                <input type="text" name="date" id="date" class="form-control" placeholder="yyyy-mm-dd">
+            </td></tr>
+            <tr><th class="responsibilities">Points</th><td valign="bottom">
+                <input type="text" name="points" id="points" class="form-control" placeholder="100">
+            </td></tr>
+            <tr><th class="responsibilities">Badge</th><td valign="bottom">
+                <table>
+                	<tr>
+                		<td class="badgeCell" id="badge-0">No badge</td>
+                		<td class="badgeCell" id="badge-1"><img src="badges/laundry.png" class="badgePreview"></td>
+  						<td class="badgeCell" id="badge-2"><img src="badges/reading.png" class="badgePreview"></td>
+  						<td class="badgeCell" id="badge-3"><img src="badges/homework_makebadges-1528581626.png" class="badgePreview"></td>
+
+					</tr><tr>
+						<td class="badgeCell" id="badge-4"><img src="badges/homework_makebadges-1528581681.png" class="badgePreview"></td>
+                		<td class="badgeCell" id="badge-5"><img src="badges/homework_makebadges-1528581758.png"  class="badgePreview"></td>
+                		<td class="badgeCell" id="badge-6"><img src="badges/homework_makebadges-1528581804.png" class="badgePreview"></td>
+  						<td class="badgeCell" id="badge-7"><img src="badges/homework_makebadges-1528581838.png" class="badgePreview"></td>
+  					</tr>
+  				</table>
+            </td></tr>
+        </table>
+                <button type="submit" id="login-btn" class="btn btn-lg btn-primary btn-block">Create Responsibility</button>
+        </form>
+	{{> badgesModal}}
+</template>
+
+<template name="badgesModal">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                {{#each badges}}
+                    {{> badgeEntry}}
+                {{/each}}
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<template name="badgeEntry">
+                <div>
+                <a href="{{filename}}"></a>
+                </div>
+</template>

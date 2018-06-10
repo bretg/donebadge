@@ -1,0 +1,147 @@
+.header {
+	color: #003691;
+	height: 20px;
+	background-color: #dbf3ff;
+	height:80px;
+	margin-top:20px;
+	font-weight:bolder;
+	font-style:italic;
+	padding-left:20px;
+	padding-top:10px;
+}
+#fun{
+	color:#08347c;
+	font-size:27px;
+	margin-top:30px;
+	font-weight:bold;
+	background-color:#eaf8ff;
+	padding:10px;
+	padding-left:30px;
+
+}
+.badge2{
+	width:90px;
+	padding-right:25px;
+	margin-left:20px;
+	margin-top:30px;
+	margin-bottom:20px;
+}
+.summary{
+	margin-top:40px;
+	margin-left:23px;
+	padding:10px;
+	font-size:40px;
+	background-color:#f9fdff;
+	border: solid;
+	border-color:#6bcdff;
+	color: #003470;
+}
+#signup{
+	font-weight:bold;
+	color:#0065b2;
+	border:dashed;
+	border-color:##14a8ff;
+	margin-top: 30px;
+	margin-left:50px;
+	padding:7px;
+	width:350px;
+}
+
+.responsibilities {
+		color:#0077c6;
+		margin-top:10px;
+		margin-left:10px;
+		padding-left:10px;
+		padding-right:20px;
+		padding-top:10px;
+		font-size:18px;
+		text-align: right;
+		vertical-align: center;
+}
+.pulldown {
+	font-size: 18px;
+}
+#date{
+		color:#009ded;
+		margin-left:20px;
+		font-size:25px;
+		margin-top:20px;
+		font-style:italic;
+}
+.respos{
+		border:solid;
+		color:#0077c6;
+		border-color:#00699e;
+		padding:15px;
+		margin-top: 20px;
+		margin-left:10px;
+		width:425px;
+		background-color:#e8f7ff;
+}
+.the_day{
+		margin-top:20px;
+		margin-left:23px;
+		padding:10px;
+		font-size:20px;
+		background-color:#f9fdff;
+		border: double;
+		border-color:#6bcdff;
+		color: #005dc9;
+		width:1300px;
+		border-width:4px;
+		margin-bottom:50px;
+
+}
+.oneday{
+		font-weight:bolder;
+		color:#00142b;
+
+}
+#addresponsibility{
+		float:right;
+		font-weight:bold;
+		padding-top: 20px
+}
+	#txblxs{
+		margin-top:30px;
+		margin-left:30px;
+	}
+	.prize{
+		margin-top:20px;
+		margin-left:23px;
+		padding:10px;
+		padding-left:20px;
+		font-size:25px;
+		background-color:#f9fdff;
+		border: solid;
+		border-color:#6bcdff;
+		color: #003470;
+		width:400px;
+	}
+	.pointsworth{
+		padding:10px;
+		padding-left:20px;
+		font-size:25px;
+		background-color:#f9fdff;
+		border: solid;
+		border-color:#6bcdff;
+		color: #003470;
+		width:200px;
+	}
+	#prizess{
+		margin-left:20px;
+	}
+	#date{
+		color:#009ded;
+		margin-left:20px;
+		font-size:25px;
+		margin-top:20px;
+		font-style:italic;
+	}
+	#pointtotal{
+		margin-left:30px;
+		margin-top:10px;
+		font-size:30px;
+		margin-bottom:20px;
+	}
+	

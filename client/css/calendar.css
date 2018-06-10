@@ -1,0 +1,38 @@
+#calendar
+{
+    width: 600px;
+}
+
+.cal-icon {
+  width: 15px;
+  height: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cal-div {
+    width: 700px;
+}
+
+.fc-event-container {
+  padding: 5px !important;
+}
+
+.cal-h4 {
+    color: #000000;
+    background: #AAAA00;
+    font-size: 10px;
+    line-height: 10px;
+    white-space: normal;
+  }
+
+.calEvent {
+   color: black;
+}
+
+.fc-event {
+  padding: 5px 10px;
+  border-color: #ddd;
+  background: #fff !important;
+}

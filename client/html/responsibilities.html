@@ -1,0 +1,33 @@
+<template name="responsibilities">
+	{{#if currentUser}}
+	<h1 class="header">Responsibility List</h1>
+
+	<table class="responsibilities" border=1>
+		<tr class="responsibilities">
+			<th class="responsibilities">Date</th>
+			<th class="responsibilities">Responsibilty</th>
+			<th class="responsibilities">Kid</th>
+			<th class="responsibilities">Points</th>
+			<th class="responsibilities">Badge</th>
+		</tr>
+		{{#each respList}}
+		    {{> respTableRow}}
+		{{/each}}
+	</table>
+	<div align="right">
+		<a href="/addResponsibility" class="btn btn-primary">Add Responsibility</a>
+	</div>
+	{{else}}
+	You need to login first
+	{{/if}}
+</template>
+
+<template name="respTableRow">
+	<tr>
+		<td class="responsibilities">{{date}}</td>
+		<td class="responsibilities">{{name}}</td>
+		<td class="responsibilities"></td>
+		<td class="responsibilities">{{points}}</td>
+		<td class="responsibilities"><img src={{badgeImg}} class="badgePreview"></td>
+	</tr>
+</template>

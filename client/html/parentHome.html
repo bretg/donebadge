@@ -1,0 +1,50 @@
+<template name="parentHome">
+	{{#if currentUser}}
+	<h1 class="header">Kid Accounts</h1>
+	<table>
+	<tr><th class="responsibilities">Kid</th><th class="responsibilities">Points</th></tr>
+	{{#each kids}}
+	   {{> kidRow}}
+	{{/each}}
+	</table>
+	<div align="right">
+	<a href="/addKidAccount" class="btn btn-primary">Add Kid Account</a>
+	</div>
+
+	<h2 class="respos">Upcoming Responsibilities</h2>
+	<div class="the_day">
+	<table class="responsibilities" border=1>
+		<tr class="responsibilities">
+			<th class="responsibilities">Date</th><th class="responsibilities">Responsibilty</th>
+			<th class="responsibilities">Kid</th><th class="responsibilities">Points</th>
+			<th class="responsibilities">Action</th>
+		</tr>
+		{{#each respList}}
+		    {{> respTableRow2}}
+		{{/each}}
+	</table>
+	</div>
+	<div align="right">
+		<a href="/addResponsibility" class="btn btn-primary">Add Responsibility</a>
+	</div>
+	{{else}}
+	You need to login first
+	{{/if}}
+</template>
+
+
+<template name="kidRow">
+	<tr><td class="responsibilities">{{username}}</td>
+		<td class="responsibilities">{{profile.points}}</td>
+	</tr>
+</template>
+
+<template name="respTableRow2">
+	<tr>
+		<td class="responsibilities" valign="middle">{{date}}</td>
+		<td class="responsibilities" valign="middle">{{name}}</td>
+		<td class="responsibilities" valign="middle"></td>
+		<td class="responsibilities" valign="middle">{{points}}</td>
+		<td class="responsibilities" valign="middle"><a href="#" class="btn btn-primary">Done</a></td>
+	</tr>
+</template>

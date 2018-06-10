@@ -1,0 +1,23 @@
+<template name="sidebar">
+	<aside class="sidebar-left"> 
+	<img src="DoneBadge.png" class="icon">
+	<a class="company-logo" href="#">DoneBadge</a>
+		<div class="sidebar-links">
+			{{#if isParent}}
+			<a class="link-green" href="/parentHome" id="calendar-link"><img src="home-icon.png" width=30><br/>Home</a>
+			<a class="link-green" href="/responsibilities" id="calendar-link"><img src="star.png" width=30><br/>Responsibilities</a>
+			<a class="link-green" href="/calendar" id="calendar-link"><img src="calendar-icon.png" width=30><br/>Calendar</a>
+			<a class="link-green" href="/prizes" id="calendar-link"><img src="trophy.png" width=30><br/>Prizes</a>
+			{{/if}}
+			{{#if isKid}}
+			<a class="link-green" href="/kidHome" id="calendar-link"><img src="home-icon.png" width=30><br/>Home</a>
+			<a class="link-green" href="/calendar" id="calendar-link"><img src="calendar-icon.png" width=30><br/>Calendar</a>
+			{{/if}}
+			{{#if currentUser}}
+			<a class="link-purple logout" href="#" id="logout-link"><i class="fa fa-sign-out"></i>Logout</a>
+			{{else}}
+			<a class="" href="/login" id="login-link"><i class="fa fa-sign-in"></i>Login</a>
+			{{/if}}
+		</div>
+	</aside>
+</template>

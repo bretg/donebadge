@@ -1,0 +1,27 @@
+<template name="prizes">
+	{{#if currentUser}}
+	<h1 class="header">Prize List</h1>
+
+	<table class="responsibilities" border=1>
+		<tr class="responsibilities">
+			<th class="responsibilities">Prize</th><th class="responsibilities">Kid</th><th class="responsibilities">Points</th>
+		</tr>
+		{{#each prizeList}}
+		    {{> prizeTableRow}}
+		{{/each}}
+	</table>
+	<div align="right">
+		<a href="/addPrize" class="btn btn-primary">Add Prize</a>
+	</div>
+	{{else}}
+	You need to login first
+	{{/if}}
+</template>
+
+<template name="prizeTableRow">
+	<tr>
+		<td class="responsibilities">{{name}}</td>
+		<td class="responsibilities">{{kidName}}</td>
+		<td class="responsibilities">{{points}}</td>
+	</tr>
+</template>
